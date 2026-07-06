@@ -1,6 +1,9 @@
 services:
   jenkins:
-    build: .
+    build:
+      context: .
+      args:
+        DOCKER_GID: "998"
     container_name: jenkins
     ports:
       - "8080:8080"

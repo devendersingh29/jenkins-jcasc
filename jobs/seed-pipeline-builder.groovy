@@ -1,6 +1,9 @@
+
+
 def pipelines = [
-  [folder: 'team-alpha', name: 'alpha-ci', repo: 'https://github.com/example/team-alpha', branch: 'main', jenkinsfile: 'Jenkinsfile'],
-  [folder: 'team-beta', name: 'beta-ci', repo: 'https://github.com/example/team-beta', branch: 'main', jenkinsfile: 'Jenkinsfile']
+  [folder: 'team-alpha', name: 'alpha-ci', jenkinsfile: 'pipelines/team-alpha/Jenkinsfile'],
+  [folder: 'team-beta', name: 'beta-ci', jenkinsfile: 'pipelines/team-beta/Jenkinsfile'],
+  [folder: 'echodocker', name: 'echodocker-ci', jenkinsfile: 'pipelines/echodocker/Jenkinsfile']
 ]
 
 pipelines.each { p ->
@@ -9,8 +12,8 @@ pipelines.each { p ->
       cpsScm {
         scm {
           git {
-            remote { url(p.repo) }
-            branch(p.branch)
+            remote { url(repoUrl) }
+            branch('main')
           }
         }
         scriptPath(p.jenkinsfile)
