@@ -1,4 +1,4 @@
-@Library('shared-libs') _
+@Library('ci-libs') _
 pipeline {
   agent { label 'team-beta' }
   stages {

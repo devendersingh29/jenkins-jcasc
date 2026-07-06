@@ -1,0 +1,12 @@
+@Library('ci-libs') _
+pipeline {
+    agent any
+
+    stages {
+        stage('Echo Docker') {
+            steps {
+                echo "docker"
+            }
+        }
+    }
+}
