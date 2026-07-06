@@ -1,0 +1,7 @@
+jenkins:
+  systemMessage: "Jenkins configured fully via JCasC - No UI setup required"
+  numExecutors: 2
+  mode: NORMAL
+  quietPeriod: 5
+  scmCheckoutRetryCount: 3
+  disableRememberMe: false

@@ -1,0 +1,12 @@
+unclassified:
+  globalLibraries:
+    libraries:
+      - name: "shared-libs"
+        defaultVersion: "main"
+        implicit: true
+        retriever:
+          modernSCM:
+            scm:
+              git:
+                remote: "${GITHUB_SHARED_LIBS_REPO}"
+                credentialsId: "git-ssh-key"       #5th task

@@ -1,0 +1,94 @@
+jenkins:
+  authorizationStrategy:
+    projectMatrix:
+      permissions:
+        - "USER:Overall/Administer:devendersingh29"
+        - "USER:Overall/Read:devendersingh29"
+        - "USER:Job/Build:devendersingh29"
+        - "USER:Job/Cancel:devendersingh29"
+        - "USER:Job/Configure:devendersingh29"
+        - "USER:Job/Create:devendersingh29"
+        - "USER:Job/Delete:devendersingh29"
+        - "USER:Job/Discover:devendersingh29"
+        - "USER:Job/Move:devendersingh29"
+        - "USER:Job/Read:devendersingh29"
+        - "USER:Job/Workspace:devendersingh29"
+        - "USER:Credentials/Create:devendersingh29"
+        - "USER:Credentials/Delete:devendersingh29"
+        - "USER:Credentials/ManageDomains:devendersingh29"
+        - "USER:Credentials/Update:devendersingh29"
+        - "USER:Credentials/View:devendersingh29"
+        - "USER:Agent/Build:devendersingh29"
+        - "USER:Agent/Configure:devendersingh29"
+        - "USER:Agent/Connect:devendersingh29"
+        - "USER:Agent/Create:devendersingh29"
+        - "USER:Agent/Delete:devendersingh29"
+        - "USER:Agent/Disconnect:devendersingh29"
+        - "USER:View/Configure:devendersingh29"
+        - "USER:View/Create:devendersingh29"
+        - "USER:View/Delete:devendersingh29"
+        - "USER:View/Read:devendersingh29"
+        - "USER:Run/Delete:devendersingh29"
+        - "USER:Run/Replay:devendersingh29"
+        - "USER:Run/Update:devendersingh29"
+ 
+        # ===========================
+        # Developer Tier
+        # ===========================
+ 
+        # sandeep
+        - "USER:Overall/Read:sandeep"
+        - "USER:Agent/Build:sandeep"
+        - "USER:Job/Build:sandeep"
+        - "USER:Job/Cancel:sandeep"
+        - "USER:Job/Discover:sandeep"
+        - "USER:Job/Read:sandeep"
+        - "USER:Job/Workspace:sandeep"
+        - "USER:Run/Replay:sandeep"
+        - "USER:View/Read:sandeep"
+ 
+        # sohail
+        - "USER:Overall/Read:sohail"
+        - "USER:Agent/Build:sohail"
+        - "USER:Job/Build:sohail"
+        - "USER:Job/Cancel:sohail"
+        - "USER:Job/Discover:sohail"
+        - "USER:Job/Read:sohail"
+        - "USER:Job/Workspace:sohail"
+        - "USER:Run/Replay:sohail"
+        - "USER:View/Read:sohail"
+ 
+        # devendar
+        - "USER:Overall/Read:devendar"
+        - "USER:Agent/Build:devendar"
+        - "USER:Job/Build:devendar"
+        - "USER:Job/Cancel:devendar"
+        - "USER:Job/Discover:devendar"
+        - "USER:Job/Read:devendar"
+        - "USER:Job/Workspace:devendar"
+        - "USER:Run/Replay:devendar"
+        - "USER:View/Read:devendar"
+ 
+        # tharun
+        - "USER:Overall/Read:tharun"
+        - "USER:Agent/Build:tharun"
+        - "USER:Job/Build:tharun"
+        - "USER:Job/Cancel:tharun"
+        - "USER:Job/Discover:tharun"
+        - "USER:Job/Read:tharun"
+        - "USER:Job/Workspace:tharun"
+        - "USER:Run/Replay:tharun"
+        - "USER:View/Read:tharun"
+ 
+        # pooja
+        - "USER:Overall/Read:pooja"
+        - "USER:Agent/Build:pooja"
+        - "USER:Job/Build:pooja"
+        - "USER:Job/Cancel:pooja"
+        - "USER:Job/Discover:pooja"
+        - "USER:Job/Read:pooja"
+        - "USER:Job/Workspace:pooja"
+        - "USER:Run/Replay:pooja"
+        - "USER:View/Read:pooja"
+ 
+ 

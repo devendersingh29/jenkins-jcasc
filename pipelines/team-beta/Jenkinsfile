@@ -1,0 +1,12 @@
+@Library('shared-libs') _
+pipeline {
+  agent { label 'team-beta' }
+  stages {
+    stage('Validate') {
+      steps {
+        buildNotify('SUCCESS', 'Team Beta validation started')
+        runStages(['lint', 'test'])
+      }
+    }
+  }
+}

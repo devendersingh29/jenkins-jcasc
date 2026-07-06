@@ -1,0 +1,45 @@
+services:
+  jenkins:
+    build: .
+    container_name: jenkins
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    environment:
+      CASC_JENKINS_CONFIG: /var/jenkins_home/casc
+      JAVA_OPTS: "-Djenkins.install.runSetupWizard=false"
+      GITHUB_OAUTH_CLIENT_ID: ${GITHUB_OAUTH_CLIENT_ID}
+      GITHUB_OAUTH_CLIENT_SECRET: ${GITHUB_OAUTH_CLIENT_SECRET}
+      GITHUB_USERNAME: ${GITHUB_USERNAME}
+      GITHUB_PAT_TOKEN: ${GITHUB_PAT_TOKEN}
+      GITHUB_ORG: ${GITHUB_ORG:-example-org}
+      JENKINS_SYSTEM_MESSAGE: ${JENKINS_SYSTEM_MESSAGE:-Jenkins configured by JCasC}
+      JENKINS_ENVIRONMENT: ${JENKINS_ENVIRONMENT:-DEV}
+      SSH_PRIVATE_KEY: ${SSH_PRIVATE_KEY:-}
+      SSH_USERNAME: ${SSH_USERNAME:-jenkins}
+      DOCKERHUB_TOKEN: ${DOCKERHUB_TOKEN:-}
+      GITHUB_SHARED_LIBS_REPO: ${GITHUB_SHARED_LIBS_REPO:-}
+    volumes:
+      - jenkins_home:/var/jenkins_home
+      - ./casc:/var/jenkins_home/casc
+      - ./jobs:/var/jenkins_home/jobs
+      - ./shared-libs:/var/jenkins_home/shared-libs
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: unless-stopped
+
+  docker-agent-1:
+    image: jenkins/ssh-agent:latest
+    container_name: docker-agent-1
+    environment:
+      JENKINS_AGENT_SSH_PUBKEY: ${JENKINS_AGENT_SSH_PUBKEY:-}
+    restart: unless-stopped
+
+  docker-agent-2:
+    image: jenkins/ssh-agent:latest
+    container_name: docker-agent-2
+    environment:
+      JENKINS_AGENT_SSH_PUBKEY: ${JENKINS_AGENT_SSH_PUBKEY:-}
+    restart: unless-stopped
+
+volumes:
+  jenkins_home:
